@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Rajdhani',sans-serif;
+  background:radial-gradient(circle at bottom,#0a0a0f,#000);
+  color:#fff;overflow-x:hidden;
+}
+
+/* Intro */
+#intro{
+  position:fixed;inset:0;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;background:#000;z-index:1000;
+}
+.ufo{width:120px;opacity:0;transform:translateY(-150px);}
+.intro-text{font-family:'Orbitron',sans-serif;font-size:2.5rem;color:#ff4500;opacity:0;text-shadow:0 0 30px #ff4500;}
+.intro-quote{opacity:0;color:#ffb380;margin-top:10px;font-size:1.2rem;}
+
+/* Background */
+.stars,.mars{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;}
+.stars{background:url('https://www.transparenttextures.com/patterns/stardust.png');animation:moveStars 100s linear infinite;}
+@keyframes moveStars{from{background-position:0 0;}to{background-position:-10000px 5000px;}}
+.mars{background:radial-gradient(circle at center,rgba(255,90,0,0.3) 0%,transparent 70%);animation:glow 5s ease-in-out infinite alternate;}
+@keyframes glow{0%{opacity:0.2;}100%{opacity:0.5;}}
+
+/* Header */
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 2rem;background:rgba(0,0,0,0.5);backdrop-filter:blur(6px);z-index:10;}
+.logo{font-family:'Orbitron',sans-serif;color:#ff4500;text-shadow:0 0 10px #ff4500;}
+nav ul{display:flex;gap:1.5rem;list-style:none;}
+nav a{color:#fff;text-decoration:none;transition:.3s;}
+nav a:hover{color:#ff4500;text-shadow:0 0 10px #ff4500;}
+
+/* Sections */
+.section{padding:100px 20px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+.hidden{display:none;}
+
+/* Hero */
+.title{font-family:'Orbitron',sans-serif;font-size:2.8rem;text-shadow:0 0 25px #ff4500;}
+.title span{color:#ff4500;}
+.subtitle{color:#ffb380;margin-top:10px;}
+.btn{background:linear-gradient(90deg,#ff4500,#ff8800);border:none;padding:12px 24px;margin-top:20px;color:#fff;font-weight:bold;
+  border-radius:50px;cursor:pointer;box-shadow:0 0 20px #ff4500;transition:.3s;}
+.btn:hover{transform:scale(1.1);box-shadow:0 0 30px #ff8800;}
+
+/* About */
+.about-img{width:80%;max-width:600px;border-radius:20px;margin-top:20px;box-shadow:0 0 20px rgba(255,69,0,0.5);}
+
+/* Menu */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;width:90%;max-width:1000px;margin-top:1rem;}
+.card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:15px;padding:1rem;transition:.5s;}
+.card:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 0 20px rgba(255,69,0,0.5);}
+.card img{width:100%;border-radius:10px;margin-bottom:.5rem;}
+.card h3{font-family:'Orbitron',sans-serif;color:#ffb380;}
+.card p{color:#ff8800;font-weight:bold;}
+
+/* Contact */
+form{display:flex;flex-direction:column;width:90%;max-width:500px;gap:1rem;margin-top:1rem;}
+input,textarea{padding:.8rem;border:none;border-radius:8px;background:rgba(255,255,255,0.1);color:#fff;}
+input:focus,textarea:focus{outline:2px solid #ff4500;}
+.contact-info{margin-top:2rem;text-align:center;}
+.socials{margin-top:10px;display:flex;gap:1rem;justify-content:center;}
+.socials a{color:#ff4500;font-size:1.5rem;transition:.3s;}
+.socials a:hover{color:#fff;text-shadow:0 0 15px #ff4500;}
+
+footer{text-align:center;padding:20px;background:rgba(0,0,0,0.6);font-size:.9rem;}
+
+@media(max-width:768px){
+  header{flex-direction:column;}
+  .title{font-size:2rem;}
+}
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease-out;
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide default cursor */
+body {
+  cursor: none;
+}
+
+/* Shooting star cursor */
+#shooting-star {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 4px white;
+  z-index: 9999;
+  animation: tailFade 0.4s linear forwards;
+}
+
+/* Tail trail effect */
+.cursor-trail {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 0 0 8px 3px white;
+  pointer-events: none;
+  animation: fadeTrail 0.5s linear forwards;
+}
+
+/* Shooting star fade */
+@keyframes tailFade {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.4; transform: scale(1.5); }
+}
+
+/* Trail vanish */
+@keyframes fadeTrail {
+  0% { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
+
+/* Parallax planet subtle */
+.mars {
+  background: radial-gradient(circle at center, rgba(255, 90, 0, .3) 0%, transparent 70%);
+  animation: floatMars 8s ease-in-out infinite alternate;
+}
+@keyframes floatMars {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(15px); }
+}
+.reviews-section {
+  margin-top: 40px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+}
+.reviews-section h3 {
+  font-size: 1.8rem;
+  color: #ff4500;
+  margin-bottom: 20px;
+}
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.review-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+}
+.review-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.review-card blockquote {
+  font-style: italic;
+  color: #fff;
+  margin: 0;
+}
+.review-card blockquote footer {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #ffb380;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 12px;
+}
+.theme-link {
+  font-size: 0.9rem;
+  color: #ffb380;
+}
+.theme-link a {
+  color: #ff8800;
+  text-decoration: none;
+}
+.theme-link a:hover {
+  text-decoration: underline;
+}
+/* ✨ Sparkle Trail */
+.sparkle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(white, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleFade 0.6s linear forwards;
+}
+
+@keyframes sparkleFade {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* ✨ Hover glow for menu items */
+.menu-item:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+/* ✨ Animated price tag */
+.price {
+  position: relative;
+  animation: pulsePrice 1.2s infinite alternate;
+}
+@keyframes pulsePrice {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.15); opacity: 0.8; }
+}
+
+/* ✨ Buy button style */
+.buy-btn {
+  background: linear-gradient(90deg, #6d19ff, #ff00c8);
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.buy-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.8);
+}
+.dish-popup{
+  position: fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(10px);
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s;
+  z-index:999;
+}
+.dish-popup.show{
+  opacity:1;
+  pointer-events:auto;
+}
+.popup-box{
+  background:#111;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  width:90%;
+  max-width:350px;
+  border:1px solid #ff4500;
+  box-shadow:0 0 20px #ff4500;
+}
+.popup-box img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+.close-btn{
+  margin-top:10px;
+  padding:8px 18px;
+  background:#ff4500;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+  border-radius:6px;
+}

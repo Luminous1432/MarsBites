@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mars Bites — Taste Beyond Earth</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Intro Animation -->
+  <div id="intro">
+    <img src="https://cdn-icons-png.flaticon.com/512/3210/3210051.png" class="ufo" alt="UFO Landing">
+    <h1 class="intro-text">🚀 Mars Bites</h1>
+    <p class="intro-quote">Taste Beyond Earth</p>
+  </div>
+
+  <!-- Background -->
+  <div class="stars"></div>
+  <div class="mars"></div>
+
+  <!-- Header -->
+  <header>
+    <h1 class="logo">🌌 Mars Bites</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" data-section="home">Home</a></li>
+        <li><a href="#about" data-section="about">About</a></li>
+        <li><a href="#menu" data-section="menu">Menu</a></li>
+        <li><a href="#contact" data-section="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="section active">
+      <div class="hero">
+        <h2 class="title">Welcome to <span>Mars Bites</span></h2>
+        <p class="subtitle">Serving astronauts and aliens fusion dishes since 2125.</p>
+        <button class="btn" id="exploreBtn">Explore Now</button>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section hidden">
+      <h2>About Us</h2>
+      <p>
+        Founded in 2125, Mars Bites was built inside the Valles Marineris Colony.<br>
+        Mars Bites is the first ever restaurant built on the Martian surface.<br>
+        We serve zero-gravity smoothies,martian Burger and space friendly meals for explorers.<br>  
+        We grow ingredients in Martian bio-domes and serve cosmic cuisine with zero-gravity flair.<br>
+        Enjoy breathtaking views of outerspace while dining.
+      </p>
+      <img src="images/mars.JPG" alt="Mars Restaurant" class="about-img">
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="section hidden">
+      <h2>Our Menu</h2>
+      <div class="menu-grid">
+        <!-- 12 Menu Items -->
+        <div class="card"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&w=600&q=80"><h3>Cosmic Burger</h3><p>$22</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&w=600&q=80"><h3>Nebula Noodles</h3><p>$18</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&w=600&q=80"><h3>Asteroid Dessert</h3><p>$15</p></div>
+        <div class="card"><img src="https://unsplash.com/photos/a-picture-of-a-taco-with-toppings-on-it-AkBLjkdm5bY"><h3>Galactic Tacos</h3><p>$19</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1601050690597-1e94ef52c54e?auto=format&w=600&q=80"><h3>Martian Pizza</h3><p>$20</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1576866209830-5a6b27b5c287?auto=format&w=600&q=80"><h3>Starlight Soup</h3><p>$14</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1532635248-3c3a1f7ae8c8?auto=format&w=600&q=80"><h3>Comet Cocktail</h3><p>$12</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&w=600&q=80"><h3>Red Dust Fries</h3><p>$11</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1606756790138-87ec09a47b04?auto=format&w=600&q=80"><h3>Zero-G Salad</h3><p>$13</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1572635196237-14b2f176d8f3?auto=format&w=600&q=80"><h3>Meteor Muffin</h3><p>$10</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&w=600&q=80"><h3>Solar Sundae</h3><p>$16</p></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1600788688892-17b8b3bd8c13?auto=format&w=600&q=80"><h3>Orbit Omelette</h3><p>$17</p></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section hidden">
+      <h2>Reserve Your Pod</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Reservation Details"></textarea>
+        <button class="btn">Launch Reservation</button>
+      </form>
+      <div class="contact-info">
+        <p>📞 +1 (800) MARS-BITE</p>
+        <p>📧 contact@marsbites.space</p>
+        <div class="socials">
+          <a href="#">🌐</a>
+          <a href="#">🐦</a>
+          <a href="#">📸</a>
+          <a href="#">🎥</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2125 Mars Bites — Taste Beyond Earth</p>
+  </footer>
+</body>
+</html>

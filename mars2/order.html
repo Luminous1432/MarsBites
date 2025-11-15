@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Place Order</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+    background:#000;
+    color:#fff;
+    font-family:Arial;
+    padding:20px;
+    text-align:center;
+}
+.form-box{
+    background:#111;
+    padding:20px;
+    border-radius:10px;
+    border:1px solid #444;
+    max-width:400px;
+    margin:auto;
+}
+input,select,button{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:6px;
+    border:none;
+}
+button{
+    background:#ff4500;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Complete Your Order</h2>
+
+<div class="form-box" id="orderForm">
+    <input id="name" placeholder="Your Name">
+    <input id="phone" placeholder="Phone Number">
+    <input id="address" placeholder="Delivery Address">
+
+    <select id="payment">
+        <option value="">Select Payment Method</option>
+        <option>Cash on Delivery</option>
+        <option>UPI</option>
+        <option>Card Payment</option>
+    </select>
+
+    <button onclick="validateOrder()">Place Order 🚀</button>
+</div>
+
+<script>
+function validateOrder(){
+    let name = document.getElementById("name").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let address = document.getElementById("address").value.trim();
+    let payment = document.getElementById("payment").value;
+
+    if(!name || !phone || !address || !payment){
+        alert("⚠️ Please fill all fields!");
+        return;
+    }
+
+    if(phone.length < 10 || isNaN(phone)){
+        alert("📞 Enter a valid 10-digit phone number!");
+        return;
+    }
+
+    // Redirect to tracking page
+    window.location.href = "track.html";
+}
+</script>
+
+</body>
+</html>

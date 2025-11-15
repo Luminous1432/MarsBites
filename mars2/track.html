@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order Tracking</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+    background:#000;
+    color:#fff;
+    font-family:Arial;
+    text-align:center;
+    padding:20px;
+}
+button{
+    background:#ff4500;
+    color:#fff;
+    padding:12px 25px;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+.track-area{
+    width:100%;
+    height:100px;
+    border:2px dashed #444;
+    margin:15px 0;
+    border-radius:10px;
+    position:relative;
+    overflow:hidden;
+}
+.rocket{
+    position:absolute;
+    left:0;
+    top:35px;
+    font-size:30px;
+    transition:1s linear;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Your Order 🚀</h2>
+<p>Status: <span id="statusText">Preparing...</span></p>
+
+<div class="track-area">
+    <div class="rocket" id="rocket">🚀</div>
+</div>
+
+<button onclick="startTracking()">Start Tracking</button>
+
+<script>
+function startTracking(){
+    let step = 0;
+    const rocket = document.getElementById("rocket");
+    const statusText = document.getElementById("statusText");
+
+    const steps = [
+        "Preparing your food 👩‍🍳",
+        "Cooking on Mars 🔥",
+        "Picked by rover 🚚",
+        "Flying to you 🛸",
+        "Arriving at your home 🏠"
+    ];
+
+    const move = setInterval(()=>{
+        statusText.innerHTML = steps[step];
+        rocket.style.left = (step * 20) + "%";
+        step++;
+
+        if(step === steps.length){
+            clearInterval(move);
+            statusText.innerHTML = "✅ Delivered! Enjoy 🚀🍔";
+        }
+    }, 1500);
+}
+</script>
+
+</body>
+</html>
