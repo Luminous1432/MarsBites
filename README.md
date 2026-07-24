@@ -1,6 +1,6 @@
 # Cosmic Restaurant Website 🌌
 
-**Cosmic Restaurant** is a futuristic, interactive front-end website built using **HTML, CSS & JavaScript**. This project was created by **Shriraksha Gourayya (Aarini)** and **Amrutha** for the **WebWave Frontend Making Competition**.
+**Cosmic Restaurant** is a futuristic, interactive front-end website built using **HTML, CSS & JavaScript**. This project was created by **Shriraksha Gourayya** for the **WebWave Frontend Making Competition**.
 
 ---
 
